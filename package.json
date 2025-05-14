@@ -1,0 +1,32 @@
+{
+  "name": "lessa-billing",
+  "version": "0.1.0",
+  "description": "SDK oficial para Lessa Billing API",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "sdk",
+    "lessa",
+    "billing",
+    "api"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "ky": "^1.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
