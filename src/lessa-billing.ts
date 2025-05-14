@@ -9,7 +9,7 @@ interface LessaBillingOptions {
     apiUrl: string
 }
 
-export class LessaBilling {
+export class LessaBillingSDK {
     private ky: KyInstance
 
     public companies: Companies
