@@ -1,0 +1,20 @@
+export const REGIME_RIMPE_NEGOCIO_POPULAR = {
+    value: 'CONTRIBUYENTE NEGOCIO POPULAR - RÉGIMEN RIMPE',
+    category: 'NEGOCIO POPULAR',
+};
+
+export const REGIME_RIMPE_EMPRENDEDOR = {
+    value: 'CONTRIBUYENTE RÉGIMEN RIMPE',
+    category: 'EMPRENDEDOR',
+};
+
+export const REGIME_GENERAL = {
+    value: 'RÉGIMEN GENERAL',
+    category: 'GENERAL',
+};
+
+export const REGIMES = [
+    REGIME_RIMPE_NEGOCIO_POPULAR,
+    REGIME_RIMPE_EMPRENDEDOR,
+    REGIME_GENERAL,
+];
