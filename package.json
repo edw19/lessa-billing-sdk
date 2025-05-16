@@ -1,8 +1,9 @@
 {
-  "name": "lessa-billing",
-  "version": "0.1.0",
+  "name": "@lessa-billing/sdk",
+  "version": "0.0.1",
   "description": "SDK oficial para Lessa Billing API",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "keywords": [
     "sdk",
@@ -10,23 +11,19 @@
     "billing",
     "api"
   ],
-  "author": "Tu Nombre",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
+  "author": "edwindev",
+  "license": "ISC",
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "npm run build -- --watch"
   },
   "dependencies": {
-    "ky": "^1.8.1"
+    "ky": "1.8.1"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "eslint": "9.26.0",
+    "prettier": "^3.5.3",
+    "tsup": "8.4.0",
+    "typescript": "5.3.3"
   }
 }

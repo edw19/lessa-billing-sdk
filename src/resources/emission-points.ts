@@ -22,7 +22,7 @@ export class EmissionPoints {
         }>()
     }
 
-    async getEmissionPointByRucAndEstablishmentCode(ruc: string, establishmentCode: string) {
+    async getEmissionPointsFromEstablishment(ruc: string, establishmentCode: number) {
         return await this.ky.get(`emission-points/find/${ruc}/${establishmentCode}`).json()
     }
 

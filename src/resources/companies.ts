@@ -22,7 +22,7 @@ export class Companies {
         return await this.ky.post(`companies/${ruc}/create-person-relation`, { json: body }).json()
     }
 
-    async getCompanies(userId: string): Promise<any[]> {
+    async getUserCompanies(userId: string): Promise<any[]> {
         return await this.ky.get(`companies/user/${userId}`).json()
     }
 }

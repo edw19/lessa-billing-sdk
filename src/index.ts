@@ -1,3 +1,4 @@
-import { LessaBillingSDK } from './lessa-billing'
+import { LessaBillingSDK as LessaBillingSDKClass } from './lessa-billing'
 
-export default LessaBillingSDK
+export const LessaBillingSDK = LessaBillingSDKClass
+export default LessaBillingSDKClass
