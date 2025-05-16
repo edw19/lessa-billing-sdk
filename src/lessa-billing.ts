@@ -9,6 +9,7 @@ import { People } from './resources/people'
 import { Establishments } from './resources/establishments'
 import { EmissionPoints } from './resources/emission-points'
 import { BatchBilling } from './resources/batch-billing'
+import { Taxes } from './resources/taxes'
 
 type LessaBillingEnvironment = "Production" | "Preview" | "Development"
 
@@ -30,6 +31,7 @@ export class LessaBillingSDK {
     public establishments: Establishments
     public people: People
     public batchBilling: BatchBilling
+    public taxes: Taxes
 
 
     private environments: LessaBillingOptions = [
@@ -72,5 +74,6 @@ export class LessaBillingSDK {
         this.establishments = new Establishments(this.ky)
         this.people = new People(this.ky)
         this.batchBilling = new BatchBilling(this.ky)
+        this.taxes = new Taxes(this.ky)
     }
 }

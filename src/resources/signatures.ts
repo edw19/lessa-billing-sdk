@@ -1,5 +1,7 @@
+import { KyInstance } from "ky"
+
 export class Signatures {
-    constructor(private ky: any) { }
+    constructor(private ky: KyInstance) { }
     async getSignatures(ruc: string): Promise<any[]> {
         return await this.ky.get(`signatures/company/${ruc}`).json()
     }
