@@ -17,7 +17,7 @@ export class BatchBilling {
         try {
             await this.axios.post(`billing/batch/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices, { timeout: 0 })
         } catch (error: any) {
-            console.log({ error: await error.response.json() })
+            console.log({ error })
             throw new Error("Error sending batch invoices")
         }
     }
