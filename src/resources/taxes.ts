@@ -1,9 +1,18 @@
-import { KyInstance } from "ky"
+import { AxiosInstance } from 'axios'
+
 
 export class Taxes {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
 
     async getTaxes() {
-        return await this.ky.get(`taxes`).json<any[]>()
+        const resp = await this.axios.get<Tax[]>(`taxes`)
+        return resp.data
     }
+}
+
+interface Tax {
+    name: string
+    code: string
+    percentageCode: number
+    fee: number
 }

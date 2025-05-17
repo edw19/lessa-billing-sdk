@@ -1,10 +1,11 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class Establishments {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
 
     async getEstablishments(ruc: string): Promise<any[]> {
-        return await this.ky.get(`establishments/company/${ruc}`).json()
+        const resp = await this.axios.get(`establishments/company/${ruc}`)
+        return resp.data
     }
 
 }

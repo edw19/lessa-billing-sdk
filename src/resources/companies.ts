@@ -1,28 +1,34 @@
-import { KyInstance } from 'ky'
+import { AxiosInstance } from 'axios'
 
 export class Companies {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
     async createCompany(data: { ruc: string, mainAddress: string, businessName: string, tradename: string, email: string, phone: string, userId: string }) {
-        return await this.ky.post("companies/create", { json: data }).json()
+        const resp = await this.axios.post("companies/create", data)
+        return resp.data
     }
 
     async getCompanyByRuc(ruc: string) {
-        return await this.ky.get(`companies/${ruc}`).json<any>()
+        const resp = await this.axios.get(`companies/${ruc}`)
+        return resp.data
     }
 
     async updateCompany(ruc: string, data: { mainAddress: string, businessName: string, tradename: string, email: string, phone: string }) {
-        return await this.ky.patch(`companies/${ruc}`, { json: data }).json()
+        const resp = await this.axios.patch(`companies/${ruc}`, data)
+        return resp.data
     }
 
     async getClientsOnCompany(ruc: string): Promise<any[]> {
-        return await this.ky.get(`companies/clients/${ruc}`).json()
+        const resp = await this.axios.get(`companies/clients/${ruc}`)
+        return resp.data
     }
 
     async createPersonRelation(ruc: string, body: { identification: string }) {
-        return await this.ky.post(`companies/${ruc}/create-person-relation`, { json: body }).json()
+        const resp = await this.axios.post(`companies/${ruc}/create-person-relation`, body)
+        return resp.data
     }
 
     async getUserCompanies(userId: string): Promise<any[]> {
-        return await this.ky.get(`companies/user/${userId}`).json()
+        const resp = await this.axios.get(`companies/user/${userId}`)
+        return resp.data
     }
 }

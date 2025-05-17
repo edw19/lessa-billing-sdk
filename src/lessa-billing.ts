@@ -1,4 +1,3 @@
-import ky, { KyInstance } from 'ky'
 import { Companies } from './resources/companies'
 import { Clients } from './resources/clients'
 import { Signatures } from './resources/signatures'
@@ -10,6 +9,7 @@ import { Establishments } from './resources/establishments'
 import { EmissionPoints } from './resources/emission-points'
 import { BatchBilling } from './resources/batch-billing'
 import { Taxes } from './resources/taxes'
+import axios, { AxiosInstance } from 'axios'
 
 type LessaBillingEnvironment = "Production" | "Preview" | "Development"
 
@@ -19,7 +19,7 @@ type LessaBillingOptions = {
 }[]
 
 export class LessaBillingSDK {
-    private ky: KyInstance
+    private axios: AxiosInstance
 
     public companies: Companies
     public clients: Clients
@@ -59,21 +59,20 @@ export class LessaBillingSDK {
             throw new Error(`Invalid environment: ${environment}`)
         }
 
-        this.ky = ky.create({
-            prefixUrl: `${environmentConfig.url}/api`,
-            retry: 0
+        this.axios = axios.create({
+            baseURL: `${environmentConfig.url}/api`,
         })
 
-        this.companies = new Companies(this.ky)
-        this.clients = new Clients(this.ky)
-        this.signatures = new Signatures(this.ky)
-        this.billing = new Billing(this.ky)
-        this.invoices = new Invoices(this.ky)
-        this.reports = new Reports(this.ky)
-        this.emissionPoints = new EmissionPoints(this.ky)
-        this.establishments = new Establishments(this.ky)
-        this.people = new People(this.ky)
-        this.batchBilling = new BatchBilling(this.ky)
-        this.taxes = new Taxes(this.ky)
+        this.companies = new Companies(this.axios)
+        this.clients = new Clients(this.axios)
+        this.signatures = new Signatures(this.axios)
+        this.billing = new Billing(this.axios)
+        this.invoices = new Invoices(this.axios)
+        this.reports = new Reports(this.axios)
+        this.emissionPoints = new EmissionPoints(this.axios)
+        this.establishments = new Establishments(this.axios)
+        this.people = new People(this.axios)
+        this.batchBilling = new BatchBilling(this.axios)
+        this.taxes = new Taxes(this.axios)
     }
 }

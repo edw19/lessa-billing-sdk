@@ -1,33 +1,26 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class EmissionPoints {
-    constructor(private ky: KyInstance) {
-
-    }
+    constructor(private axios: AxiosInstance) { }
 
     async getEmissionPoints(establishmentId: string): Promise<any[]> {
-        return await this.ky.get(`emission-points/establishment/${establishmentId}`).json()
+        const resp = await this.axios.get(`emission-points/establishment/${establishmentId}`)
+        return resp.data
     }
 
     async getEmissionPointByRucAndEstablishmentCodeAndEmissionPoint(ruc: string, establishmentCode: number, emissionPoint: number) {
-        return await this.ky.get(`emission-points/find-one/${ruc}/${establishmentCode}/${emissionPoint}`).json<{
-            id: string;
-            point: number;
-            sequential: number;
-            status: number;
-            createdAt: string;
-            updatedAt: string;
-            establishmentId: string;
-            pointLabel: string;
-        }>()
+        const resp = await this.axios.get(`emission-points/find-one/${ruc}/${establishmentCode}/${emissionPoint}`)
+        return resp.data
     }
 
     async getEmissionPointsFromEstablishment(ruc: string, establishmentCode: number) {
-        return await this.ky.get(`emission-points/find/${ruc}/${establishmentCode}`).json()
+        const resp = await this.axios.get(`emission-points/find/${ruc}/${establishmentCode}`)
+        return resp.data
     }
 
     async updateEmissionPoint(emissionPointId: string, data: any) {
-        return await this.ky.patch(`emission-points/${emissionPointId}`, { json: data }).json()
+        const resp = await this.axios.patch(`emission-points/${emissionPointId}`, { json: data })
+        return resp.data
     }
 
 }

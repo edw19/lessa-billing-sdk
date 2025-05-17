@@ -1,28 +1,23 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class BatchBilling {
-    constructor(private readonly ky: KyInstance) { }
+    constructor(private readonly axios: AxiosInstance) { }
 
     async sendInvoicesBatch(ruc: string, establishmentCode: number, emissionPointCode: number, invoices: any[]) {
-        return await this.ky.post(`billing/batch/invoices/send/${ruc}/${establishmentCode}/${emissionPointCode}`, {
-            json: invoices
-        }).json<{ accessKeyBatch: string }>()
+        const resp = await this.axios.post(`billing/batch/invoices/send/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices)
+        return resp.data
     }
 
     async checkAuthorizationInvoicesBatch(accessKeyBatch: string) {
-        return await this.ky.post(`billing/batch/invoices/check/${accessKeyBatch}`).json()
+        const resp = await this.axios.post(`billing/batch/invoices/check/${accessKeyBatch}`)
+        return resp.data
     }
 
     async batchInvoices(ruc: string, establishmentCode: number, emissionPointCode: number, invoices: any[]) {
         try {
-
-            const resp = await this.ky.post(`billing/batch/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, {
-                timeout: false,
-                json: invoices
-            }).json<{ accessKeyBatch: string }>()
+            await this.axios.post(`billing/batch/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices, { timeout: 0 })
         } catch (error: any) {
-
-            console.log({error: await error.response.json()})
+            console.log({ error: await error.response.json() })
             throw new Error("Error sending batch invoices")
         }
     }

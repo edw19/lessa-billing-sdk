@@ -1,19 +1,21 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class Invoices {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
 
     async getInvoicesByAssociationId(clientOnCompanyId: string, skip: number, take: number) {
-        return await this.ky.get(`invoices/association/${clientOnCompanyId}`,
+        const resp = await this.axios.get(`invoices/association/${clientOnCompanyId}`,
             {
-                searchParams: {
+                params: {
                     skip,
                     take
                 }
-            }).json()
+            })
+        return resp.data
     }
 
     async getInvoicesByRuc(ruc: string, date: string) {
-        return await this.ky.get(`invoices/company/${ruc}`, { searchParams: { date } }).json<any[]>()
+        const resp = await this.axios.get(`invoices/company/${ruc}`, { params: { date } })
+        return resp.data
     }
 }

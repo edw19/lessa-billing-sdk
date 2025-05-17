@@ -1,11 +1,12 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class Clients {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
 
 
     async findClientOnCompany(identificationID: string, rucID: string) {
-        return await this.ky.get(`clients/find/${identificationID}/${rucID}`).json()
+        const resp = await this.axios.get(`clients/find/${identificationID}/${rucID}`)
+        return resp.data
     }
 
 
@@ -22,7 +23,7 @@ export class Clients {
         }
 
         if (Object.keys(personalInfo).length > 0) {
-            await this.ky.patch(`people/update/${currentIdentificationID}`, {
+            await this.axios.patch(`people/update/${currentIdentificationID}`, {
                 json: {
                     ...(identification && { identification }),
                     ...(name && { name }),
@@ -37,7 +38,8 @@ export class Clients {
             ? identification
             : currentIdentificationID;
 
-        return await this.ky.patch(`clients/update/${updatedIdentification}/${rucID}`, { json: rest }).json()
+        const resp = await this.axios.patch(`clients/update/${updatedIdentification}/${rucID}`, rest)
+        return resp.data
     }
 
 }

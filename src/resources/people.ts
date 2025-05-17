@@ -1,14 +1,16 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class People {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
 
     async findPersonByIdentification(identification: string) {
-        return await this.ky.get(`people/find/${identification}`).json()
+        const resp = await this.axios.get(`people/find/${identification}`)
+        return resp.data
     }
 
     async validateIdentification(identification: string) {
-        return await this.ky.get(`people/validate/${identification}`)
+        const resp = await this.axios.get(`people/validate/${identification}`)
+        return resp.data
     }
 
 }

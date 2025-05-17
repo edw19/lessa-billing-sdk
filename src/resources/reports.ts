@@ -1,10 +1,11 @@
-import { KyInstance } from "ky";
+import { AxiosInstance } from 'axios'
 
 export class Reports {
-    constructor(private readonly ky: KyInstance) { }
+    constructor(private readonly axios: AxiosInstance) { }
 
     async getInvoicePdf(accessKey: string) {
-        return await this.ky.get(`reports/bill/${accessKey}`).blob()
+        const resp = await this.axios.get(`reports/bill/${accessKey}`, { responseType: "blob" })
+        return resp.data
     }
 
 }

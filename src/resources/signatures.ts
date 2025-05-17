@@ -1,16 +1,19 @@
-import { KyInstance } from "ky"
+import { AxiosInstance } from 'axios'
 
 export class Signatures {
-    constructor(private ky: KyInstance) { }
+    constructor(private axios: AxiosInstance) { }
     async getSignatures(ruc: string): Promise<any[]> {
-        return await this.ky.get(`signatures/company/${ruc}`).json()
+        const resp = await this.axios.get(`signatures/company/${ruc}`)
+        return resp.data
     }
 
     async updateSignature(data: any) {
-        return await this.ky.patch(`signatures/update/${data.ruc}/${data.id}`, { json: { selected: data.selected } }).json()
+        const resp = await this.axios.patch(`signatures/update/${data.ruc}/${data.id}`, { selected: data.selected })
+        return resp.data
     }
 
     async createSignature(ruc: string, formData: FormData) {
-        return await this.ky.post(`signatures/create/${ruc}`, { body: formData }).json()
+        const resp = await this.axios.post(`signatures/create/${ruc}`, formData)
+        return resp.data
     }
 }
