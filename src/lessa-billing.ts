@@ -11,7 +11,7 @@ import { BatchBilling } from './resources/batch-billing'
 import { Taxes } from './resources/taxes'
 import axios, { AxiosInstance } from 'axios'
 
-type LessaBillingEnvironment = "Production" | "Preview" | "Development"
+ type LessaBillingEnvironment = "Production" | "Preview" | "Development" | & {}
 
 type LessaBillingOptions = {
     environment: LessaBillingEnvironment,
@@ -49,7 +49,7 @@ export class LessaBillingSDK {
         }
     ]
 
-    constructor(environment?: LessaBillingEnvironment) {
+    constructor(environment: LessaBillingEnvironment) {
 
         const environmentConfig = !environment
             ? this.environments.find(e => e.environment === "Preview")
