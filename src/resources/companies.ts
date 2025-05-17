@@ -22,6 +22,12 @@ export class Companies {
         return resp.data
     }
 
+    async countClientsOnCompany(ruc: string): Promise<number> {
+        const resp = await this.axios.get(`companies/clients/count/${ruc}`)
+        return resp.data
+    }
+
+
     async createPersonRelation(ruc: string, body: { identification: string }) {
         const resp = await this.axios.post(`companies/${ruc}/create-person-relation`, body)
         return resp.data
