@@ -16,4 +16,8 @@ export class Signatures {
         const resp = await this.axios.post(`signatures/create/${ruc}`, formData)
         return resp.data
     }
+
+    async selectSignature(id: string) {
+        await this.axios.patch(`signatures/select/${id}`)
+    }
 }

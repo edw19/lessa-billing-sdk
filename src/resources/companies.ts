@@ -37,4 +37,9 @@ export class Companies {
         const resp = await this.axios.get(`companies/user/${userId}`)
         return resp.data
     }
+
+    async getBillingStatus(ruc: string) {
+        const resp = await this.axios.get(`companies/billing-status/${ruc}`)
+        return resp.data
+    }
 }
