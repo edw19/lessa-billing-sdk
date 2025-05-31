@@ -18,4 +18,14 @@ export class Invoices {
         const resp = await this.axios.get(`invoices/company/${ruc}`, { params: { date } })
         return resp.data
     }
+
+    async getInvoicesByClientOnCompany(identificationID: string, rucID: string, skip: number, take: number) {
+        const resp = await this.axios.get(`invoices/clientOnCompany/${identificationID}/${rucID}`, {
+            params: {
+                skip,
+                take
+            }
+        })
+        return resp.data
+    }
 }
