@@ -17,7 +17,7 @@ npm install lessa-billing-sdk
 import { LessaBillingSDK, PAYMENT_METHOD_WITHOUT_USING_FINANCIAL_SYSTEM, IVA_TAX_CODE, IVA_PERCENTAGE_CODE_15, IVA_FEE_CODE_15 } from 'lessa-billing-sdk';
 
 // Inicializar el SDK (ambientes disponibles: 'Production', 'Test')
-const sdk = new LessaBillingSDK('Test');
+const sdk = new LessaBillingSDK('<API_KEY>', { environment: 'Test' });
 
 // Ejemplo: Obtener compañías de un usuario
 const companies = await sdk.companies.getUserCompanies('userId');
