@@ -16,5 +16,5 @@ export * from './libs/type-environment'
 export * from './libs/type-receipt'
 export * from './libs/calculate-totals-invoice'
 
-export const LessaBillingSDK = LessaBillingSDKClass
+export const LessaSDK = LessaBillingSDKClass
 export default LessaBillingSDKClass
