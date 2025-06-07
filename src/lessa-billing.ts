@@ -11,7 +11,7 @@ import { BatchBilling } from './resources/batch-billing'
 import { Taxes } from './resources/taxes'
 import axios, { AxiosInstance } from 'axios'
 
-type LessaBillingEnvironment = "Production" | "Test" | "Development"
+type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {})
 
 type LessaBillingOptions = {
     environment: LessaBillingEnvironment,
