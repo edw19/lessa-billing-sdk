@@ -49,14 +49,14 @@ export class LessaBillingSDK {
         }
     ]
 
-    constructor(API_KEY: string, { environment }: { environment?: LessaBillingEnvironment }) {
+    constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment }) {
 
-        const environmentConfig = !environment
+        const environmentConfig = !config?.environment
             ? this.environments.find(e => e.environment === "Test")
-            : this.environments.find(e => e.environment === environment)
+            : this.environments.find(e => e.environment === config?.environment)
 
         if (!environmentConfig) {
-            throw new Error(`Invalid environment: ${environment}`)
+            throw new Error(`Invalid environment: ${config?.environment}`)
         }
 
         this.axios = axios.create({
