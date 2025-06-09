@@ -62,7 +62,7 @@ export class LessaBillingSDK {
         this.axios = axios.create({
             baseURL: `${environmentConfig.url}/api`,
             headers: {
-                Authorization: `Bearer ${API_KEY}`
+                "x-lessa-api-key": API_KEY,
             }
         })
 
