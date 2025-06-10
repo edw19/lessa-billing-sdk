@@ -48,7 +48,14 @@ export class Companies {
         return resp.data
     }
 
-    async createCompanyRelation(data: { rucProvider: string; rucClient: string }) {
+    async createCompanyRelation(data: {
+        rucProvider: string
+        rucClient: string
+        businessName: string
+        phone: string
+        email: string
+        mainAddress: string
+    }) {
         const resp = await this.axios.post(`companies/create-relation`, data)
         return resp.data
     }
