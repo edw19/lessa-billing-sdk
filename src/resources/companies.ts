@@ -60,6 +60,18 @@ export class Companies {
         return resp.data
     }
 
+    async updateCompanyRelation(data: {
+        rucProvider: string
+        rucClient: string
+        businessName: string
+        phone: string
+        email: string
+        mainAddress: string
+    }) {
+        const resp = await this.axios.patch(`companies/update-relation`, data)
+        return resp.data
+    }
+
     async isCompanyRegistered(ruc: string) {
         const resp = await this.axios.get(`companies/is-registered/${ruc}`)
         return resp.data
