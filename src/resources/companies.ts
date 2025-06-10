@@ -52,4 +52,9 @@ export class Companies {
         const resp = await this.axios.post(`companies/create-relation`, data)
         return resp.data
     }
+
+    async isCompanyRegistered(ruc: string) {
+        const resp = await this.axios.get(`companies/is-registered/${ruc}`)
+        return resp.data
+    }
 }
