@@ -22,6 +22,11 @@ export class Companies {
         return resp.data
     }
 
+    async getClientsOnCompanyMapped(ruc: string) {
+        const resp = await this.axios.get(`companies/clients/mapped/${ruc}`)
+        return resp.data
+    }
+
     async countClientsOnCompany(ruc: string): Promise<number> {
         const resp = await this.axios.get(`companies/clients/count/${ruc}`)
         return resp.data
