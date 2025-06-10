@@ -47,4 +47,9 @@ export class Companies {
         const resp = await this.axios.get(`companies/billing-status/${ruc}`)
         return resp.data
     }
+
+    async createCompanyRelation(data: { rucProvider: string; rucClient: string }) {
+        const resp = await this.axios.post(`companies/create-relation`, data)
+        return resp.data
+    }
 }
