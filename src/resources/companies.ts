@@ -48,27 +48,29 @@ export class Companies {
         return resp.data
     }
 
-    async createCompanyRelation(data: {
-        rucProvider: string
-        rucClient: string
-        businessName: string
-        phone: string
-        email: string
-        mainAddress: string
-    }) {
-        const resp = await this.axios.post(`companies/create-relation`, data)
+    async createCompanyRelation(
+        rucProvider: string,
+        rucClient: string,
+        data: {
+            businessName: string
+            phone: string
+            email: string
+            mainAddress: string
+        }) {
+        const resp = await this.axios.post(`companies/create-relation/${rucProvider}/${rucClient}`, data)
         return resp.data
     }
 
-    async updateCompanyRelation(data: {
-        rucProvider: string
-        rucClient: string
-        businessName: string
-        phone: string
-        email: string
-        mainAddress: string
-    }) {
-        const resp = await this.axios.patch(`companies/update-relation`, data)
+    async updateCompanyRelation(
+        rucProvider: string,
+        rucClient: string,
+        data: {
+            businessName: string
+            phone: string
+            email: string
+            mainAddress: string
+        }) {
+        const resp = await this.axios.patch(`companies/update-relation/${rucProvider}/${rucClient}`, data)
         return resp.data
     }
 
