@@ -78,4 +78,9 @@ export class Companies {
         const resp = await this.axios.get(`companies/is-registered/${ruc}`)
         return resp.data
     }
+
+    async getCompanyEstablishmentsAndEmissionPoints(ruc: string) {
+        const resp = await this.axios.get(`companies/${ruc}/establishments-and-emission-points`)
+        return resp.data
+    }
 }
