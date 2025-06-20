@@ -17,6 +17,6 @@ export function timeUntilExpiration(isoDate: string) {
         months += 12
     }
 
-    return `Expira en ${years} ${years === 1 ? 'año' : 'años'} ${months} ${months === 1 ? 'mes' : 'meses'} and ${days} ${days === 1 ? 'día' : 'días'}`
+    return `${years} ${years === 1 ? 'año' : 'años'} ${months} ${months === 1 ? 'mes' : 'meses'} y ${days} ${days === 1 ? 'día' : 'días'}`
 }
 
