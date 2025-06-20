@@ -83,4 +83,9 @@ export class Companies {
         const resp = await this.axios.get(`companies/${ruc}/establishments-and-emission-points`)
         return resp.data
     }
+
+    async getCompaniesEstablishmentsAndEmissionPointsByUserId(userId: string) {
+        const resp = await this.axios.get(`companies/${userId}/companies-establishments-and-emission-points`)
+        return resp.data
+    }
 }
