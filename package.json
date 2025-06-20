@@ -1,6 +1,6 @@
 {
   "name": "lessa-billing-sdk",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "SDK oficial para Lessa Billing API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
