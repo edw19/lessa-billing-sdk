@@ -34,7 +34,8 @@ export class Billing {
 
 
 export interface BillingInvoice {
-    clientOnCompanyId: string;
+    clientOnCompanyId?: string;
+    companyOnCompanyId?: string;
     invoiceAssociationId?: string;
     paymentMethodCode: string;
     details: Detail[];
@@ -48,14 +49,8 @@ interface Detail {
     discount: number;
     quantity: number;
     unitPrice: number;
-    taxes: Tax[];
+    taxes: string[];
     AdditionalDetails?: AdditionalDetails[];
-}
-
-interface Tax {
-    code: string;
-    percentageCode: number;
-    fee: number;
 }
 
 interface AdditionalDetails {
