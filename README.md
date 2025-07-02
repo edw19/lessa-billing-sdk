@@ -35,13 +35,7 @@ const invoiceData = {
       discount: 0,
       quantity: 1,
       unitPrice: 100,
-      taxes: [
-        {
-          code: IVA_TAX_CODE,
-          percentageCode: IVA_PERCENTAGE_CODE_15,
-          fee: IVA_FEE_CODE_15
-        }
-      ],
+      taxes: ["iva:15"],
       AdditionalDetails: [
         { name: 'Detalle extra', value: 'Valor' }
       ]
