@@ -45,24 +45,24 @@ export class Clients {
 
 
     async getCredits(identificationID: string, rucID: string) {
-        const resp = await this.axios.get(`credits/${identificationID}/${rucID}`)
+        const resp = await this.axios.get(`clients/credits/${identificationID}/${rucID}`)
         return resp.data
     }
 
     async createCredit(identificationID: string, rucID: string, data: any) {
-        const resp = await this.axios.post(`credits/create/${identificationID}/${rucID}`, data)
+        const resp = await this.axios.post(`clients/credits/create/${identificationID}/${rucID}`, data)
         return resp.data
     }
 
     // payments
 
     async paymentHistory(creditID: string) {
-        const resp = await this.axios.get(`paymentsHistory/find/${creditID}`)
+        const resp = await this.axios.get(`clients/paymentsHistory/find/${creditID}`)
         return resp.data
     }
 
     async createPayment(identificationID: string, rucID: string, data: any) {
-        const resp = await this.axios.post(`paymentHistory/create/${identificationID}/${rucID}`, data)
+        const resp = await this.axios.post(`clients/paymentHistory/create/${identificationID}/${rucID}`, data)
         return resp.data
     }
 
