@@ -3,12 +3,10 @@ import { AxiosInstance } from 'axios'
 export class Clients {
     constructor(private axios: AxiosInstance) { }
 
-
     async findClientOnCompany(identificationID: string, rucID: string) {
         const resp = await this.axios.get(`clients/find/${identificationID}/${rucID}`)
         return resp.data
     }
-
 
     async updateClient(currentIdentificationID: string, rucID: string, data: any) {
 
@@ -39,6 +37,32 @@ export class Clients {
             : currentIdentificationID;
 
         const resp = await this.axios.patch(`clients/update/${updatedIdentification}/${rucID}`, rest)
+        return resp.data
+    }
+
+
+    // credits 
+
+
+    async getCredits(identificationID: string, rucID: string) {
+        const resp = await this.axios.get(`credits/${identificationID}/${rucID}`)
+        return resp.data
+    }
+
+    async createCredit(identificationID: string, rucID: string, data: any) {
+        const resp = await this.axios.post(`credits/create/${identificationID}/${rucID}`, data)
+        return resp.data
+    }
+
+    // payments
+
+    async paymentHistory(creditID: string) {
+        const resp = await this.axios.get(`paymentsHistory/find/${creditID}`)
+        return resp.data
+    }
+
+    async createPayment(identificationID: string, rucID: string, data: any) {
+        const resp = await this.axios.post(`paymentHistory/create/${identificationID}/${rucID}`, data)
         return resp.data
     }
 
