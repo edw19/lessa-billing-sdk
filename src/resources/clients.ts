@@ -57,7 +57,7 @@ export class Clients {
     // payments
 
     async paymentHistory(creditID: string) {
-        const resp = await this.axios.get(`clients/paymentsHistory/find/${creditID}`)
+        const resp = await this.axios.get(`clients/paymentHistory/find/${creditID}`)
         return resp.data
     }
 
