@@ -25,10 +25,7 @@ export class BatchBilling {
     }
 
     async batchInvoices(ruc: string, establishmentCode: number, emissionPointCode: number, invoices: BillingInvoice[]) {
-        try {
-            await this.axios.post(`billing/batch/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices, { timeout: 0 })
-        } catch (error: any) {
-            throw new Error("Error sending batch invoices")
-        }
+        const resp = await this.axios.post(`billing/batch/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices, { timeout: 0 })
+        return resp.data
     }
 }
