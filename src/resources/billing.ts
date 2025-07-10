@@ -32,6 +32,11 @@ export class Billing {
     }
 }
 
+export interface GenerateBatchBilling {
+    description: string
+    invoices: BillingInvoice[]
+}
+
 
 export interface BillingInvoice {
     clientOnCompanyId?: string;

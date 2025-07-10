@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios'
-import { BillingInvoice } from './billing'
+import { BillingInvoice, GenerateBatchBilling } from './billing'
 
 export class BatchBilling {
     constructor(private readonly axios: AxiosInstance) { }
@@ -24,8 +24,8 @@ export class BatchBilling {
         return resp.data
     }
 
-    async batchInvoices(ruc: string, establishmentCode: number, emissionPointCode: number, invoices: BillingInvoice[]) {
-        const resp = await this.axios.post(`batch-billing/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, invoices, { timeout: 0 })
+    async batchInvoices(ruc: string, establishmentCode: number, emissionPointCode: number, data: GenerateBatchBilling) {
+        const resp = await this.axios.post(`batch-billing/invoices/${ruc}/${establishmentCode}/${emissionPointCode}`, data, { timeout: 0 })
         return resp.data
     }
 
