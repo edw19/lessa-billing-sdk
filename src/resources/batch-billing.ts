@@ -33,4 +33,9 @@ export class BatchBilling {
         const resp = await this.axios.get(`batch-billing/processes/${ruc}`)
         return resp.data
     }
+
+    async updateBillingProcess(billingProcessId: string, data: any) {
+        const resp = await this.axios.patch(`batch-billing/processes/${billingProcessId}`, data)
+        return resp.data
+    }
 }
