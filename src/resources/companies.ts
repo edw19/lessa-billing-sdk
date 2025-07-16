@@ -48,6 +48,11 @@ export class Companies {
         return resp.data
     }
 
+    async geCompanyOnCompany(rucProvider: string, rucClient: string) {
+        const resp = await this.axios.get(`companies/find-company-on-company/${rucProvider}/${rucClient}`)
+        return resp.data
+    }
+
     async createCompanyRelation(
         rucProvider: string,
         rucClient: string,
