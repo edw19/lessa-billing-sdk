@@ -14,6 +14,34 @@
     "billing",
     "api"
   ],
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
   "author": "edwindev",
   "license": "ISC",
   "scripts": {
@@ -28,8 +56,11 @@
     "access": "public"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "eslint": "9.26.0",
     "prettier": "3.5.3",
+    "semantic-release": "^24.2.7",
     "tsup": "8.4.0",
     "typescript": "5.3.3"
   }
