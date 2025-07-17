@@ -12,4 +12,8 @@ export class Establishments {
         throw new Error('Method not implemented.')
     }
 
+    async updateEstablishment(establishmentId: string, data: any) {
+        throw new Error('Method not implemented.')
+    }
+
 }
