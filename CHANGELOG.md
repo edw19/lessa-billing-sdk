@@ -1,3 +1,10 @@
+# [0.1.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.0.49...v0.1.0) (2025-07-17)
+
+
+### Features
+
+* **new service:** add delete client on company and delete company on company services ([1364dee](https://github.com/edw19/lessa-billing-sdk/commit/1364deed4dcc13370e81e5d7f2f9c028fae4bc23))
+
 ## [0.0.49](https://github.com/edw19/lessa-billing-sdk/compare/v0.0.48...v0.0.49) (2025-07-17)
 
 
