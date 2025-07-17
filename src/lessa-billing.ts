@@ -10,6 +10,7 @@ import { EmissionPoints } from './resources/emission-points'
 import { BatchBilling } from './resources/batch-billing'
 import { Taxes } from './resources/taxes'
 import axios, { AxiosInstance } from 'axios'
+import { CompaniesOnCompanies } from './resources/companies-on-companies'
 
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {})
 
@@ -22,6 +23,7 @@ export class LessaBillingSDK {
     private axios: AxiosInstance
 
     public companies: Companies
+    public companiesOnCompanies: CompaniesOnCompanies
     public clients: Clients
     public signatures: Signatures
     public billing: Billing
@@ -67,6 +69,7 @@ export class LessaBillingSDK {
         })
 
         this.companies = new Companies(this.axios)
+        this.companiesOnCompanies = new CompaniesOnCompanies(this.axios)
         this.clients = new Clients(this.axios)
         this.signatures = new Signatures(this.axios)
         this.billing = new Billing(this.axios)
