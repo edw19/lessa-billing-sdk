@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios'
 
 export class Clients {
-    constructor(private axios: AxiosInstance) { }
+    constructor(private readonly axios: AxiosInstance) { }
 
     async findClientOnCompany(identificationID: string, rucID: string) {
         const resp = await this.axios.get(`clients/find/${identificationID}/${rucID}`)
@@ -40,9 +40,12 @@ export class Clients {
         return resp.data
     }
 
+    async deleteClient(identificationID: string, rucID: string) {
+        const resp = await this.axios.delete(`clients/delete/${identificationID}/${rucID}`)
+        return resp.data
+    }
 
     // credits 
-
 
     async getCredits(identificationID: string, rucID: string) {
         const resp = await this.axios.get(`clients/credits/${identificationID}/${rucID}`)
