@@ -1,3 +1,10 @@
+## [0.0.49](https://github.com/edw19/lessa-billing-sdk/compare/v0.0.48...v0.0.49) (2025-07-17)
+
+
+### Bug Fixes
+
+* **method not implemented:** add new method ([4b522ef](https://github.com/edw19/lessa-billing-sdk/commit/4b522ef9e1e34535b5659382ad4ccc3d7e58fb29))
+
 ## [0.0.48](https://github.com/edw19/lessa-billing-sdk/compare/v0.0.47...v0.0.48) (2025-07-17)
 
 
