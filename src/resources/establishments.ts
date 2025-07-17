@@ -16,4 +16,7 @@ export class Establishments {
         throw new Error('Method not implemented.')
     }
 
+    async deleteEstablishment(establishmentId: string) {
+        throw new Error('Method not implemented.')
+    }
 }

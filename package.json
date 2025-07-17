@@ -46,7 +46,8 @@
   "license": "ISC",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "npm run build -- --watch"
+    "dev": "npm run build -- --watch",
+    "commit": "cz"
   },
   "dependencies": {
     "axios": "1.9.0",
@@ -58,10 +59,17 @@
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "9.26.0",
     "prettier": "3.5.3",
     "semantic-release": "24.2.7",
     "tsup": "8.4.0",
     "typescript": "5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
