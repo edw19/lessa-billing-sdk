@@ -8,4 +8,8 @@ export class Establishments {
         return resp.data
     }
 
+    async createEstablishment(ruc: string, data: any) {
+        throw new Error('Method not implemented.')
+    }
+
 }
