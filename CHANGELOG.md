@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.1.0...v0.2.0) (2025-07-18)
+
+
+### Features
+
+* **new method:** add new method for handling create company ([7260337](https://github.com/edw19/lessa-billing-sdk/commit/7260337f042dfebb31596e03ee9e8acd4fdb97fa))
+
 # [0.1.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.0.49...v0.1.0) (2025-07-17)
 
 
