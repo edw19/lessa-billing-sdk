@@ -7,4 +7,8 @@ export class CompaniesOnCompanies {
         const resp = await this.axios.delete(`companies/delete-company-on-company/${rucProvider}/${rucClient}`)
         return resp.data
     }
+
+    async createCompanyRelation() {
+        throw new Error("Method not implemented.")
+    }
 }
