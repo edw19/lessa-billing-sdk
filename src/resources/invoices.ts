@@ -26,6 +26,17 @@ export class Invoices {
                 take
             }
         })
+
+        return resp.data
+    }
+    async getInvoicesByCompanyOnCompany(rucClient: string, rucProvider: string, skip: number, take: number) {
+        const resp = await this.axios.get(`invoices/companyOnCompany/${rucClient}/${rucProvider}`, {
+            params: {
+                skip,
+                take
+            }
+        })
+
         return resp.data
     }
 }
