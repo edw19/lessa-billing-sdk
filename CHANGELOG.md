@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.2.0...v0.3.0) (2025-07-25)
+
+
+### Features
+
+* **add new service:** new service added for searh invoices by company on company ([242b978](https://github.com/edw19/lessa-billing-sdk/commit/242b978aaf8e751379391408f6ea67630bc715f6))
+
 # [0.2.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.1.0...v0.2.0) (2025-07-18)
 
 
