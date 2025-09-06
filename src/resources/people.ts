@@ -13,4 +13,9 @@ export class People {
         return resp.data
     }
 
+    async createPerson(body: {type: string, identification: string, name: string, secondName?: string, lastName: string, secondLastName?: string, address: string, email: string, phone: string }) {
+        const resp = await this.axios.post('people/create', body)
+        return resp.data
+    }
+
 }
