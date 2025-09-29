@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.3.0...v0.4.0) (2025-09-06)
+
+
+### Features
+
+* **create person path added:** create person path added ([3e365e1](https://github.com/edw19/lessa-billing-sdk/commit/3e365e1d85ffc9cdf6d341bf2ab4217844b24861))
+
 # [0.3.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.2.0...v0.3.0) (2025-07-25)
 
 
