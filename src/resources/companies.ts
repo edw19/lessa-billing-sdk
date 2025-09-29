@@ -93,4 +93,9 @@ export class Companies {
         const resp = await this.axios.get(`companies/${userId}/companies-establishments-and-emission-points`)
         return resp.data
     }
+
+    async getCompaniesByUserEmail(userEmail: string) {
+        const resp = await this.axios.get(`companies/user-email/${userEmail}`)
+        return resp.data
+    }
 }

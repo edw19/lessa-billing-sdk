@@ -1,4 +1,4 @@
-import { LessaBillingSDK as LessaBillingSDKClass } from './lessa-billing'
+import { LessaBillingSDK, LessaBillingClientSideSDK, createLessaBrowserClientSDK } from './lessa-billing'
 
 export * from './libs/consumers'
 export * from './libs/taxes'
@@ -17,5 +17,13 @@ export * from './libs/type-receipt'
 export * from './libs/calculate-totals-invoice'
 export * from './utils/index'
 
-export const LessaBillingSDK = LessaBillingSDKClass
-export default LessaBillingSDKClass
+export { type Order, type Table, type OrderItem, type OrderList } from './resources/orders'
+
+
+export {
+    LessaBillingSDK,
+    LessaBillingClientSideSDK,
+    createLessaBrowserClientSDK
+}
+
+export default LessaBillingSDK
