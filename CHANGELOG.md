@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.4.0...v0.5.0) (2025-09-29)
+
+
+### Features
+
+* add new methods and create lessa sdk for client ([d560066](https://github.com/edw19/lessa-billing-sdk/commit/d560066c1d158961c31f8313328d37e2a586e088))
+
 # [0.4.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.3.0...v0.4.0) (2025-09-06)
 
 
