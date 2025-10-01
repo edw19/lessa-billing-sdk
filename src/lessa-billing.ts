@@ -14,6 +14,8 @@ import { CompaniesOnCompanies } from './resources/companies-on-companies'
 import { Auth } from './resources/auth'
 import { Orders } from './resources/orders'
 import { Tables } from './resources/tables'
+import { CategoryProducts } from './resources/category-products'
+import { Products } from './resources/products'
 
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {})
 
@@ -39,7 +41,7 @@ const environments: LessaBillingOptions = [
 ]
 
 export class LessaBillingSDK {
-    private axios: AxiosInstance
+    private http: AxiosInstance
 
     public companies: Companies
     public companiesOnCompanies: CompaniesOnCompanies
@@ -55,6 +57,8 @@ export class LessaBillingSDK {
     public taxes: Taxes
     public orders: Orders
     public tables: Tables
+    public categoryProducts: CategoryProducts
+    public products: Products
 
     constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment }) {
 
@@ -66,27 +70,29 @@ export class LessaBillingSDK {
             throw new Error(`Invalid environment: ${config?.environment}`)
         }
 
-        this.axios = axios.create({
+        this.http = axios.create({
             baseURL: `${environmentConfig.url}/api`,
             headers: {
                 "x-lessa-api-key": API_KEY,
             }
         })
 
-        this.companies = new Companies(this.axios)
-        this.companiesOnCompanies = new CompaniesOnCompanies(this.axios)
-        this.clients = new Clients(this.axios)
-        this.signatures = new Signatures(this.axios)
-        this.billing = new Billing(this.axios)
-        this.invoices = new Invoices(this.axios)
-        this.reports = new Reports(this.axios)
-        this.emissionPoints = new EmissionPoints(this.axios)
-        this.establishments = new Establishments(this.axios)
-        this.people = new People(this.axios)
-        this.batchBilling = new BatchBilling(this.axios)
-        this.taxes = new Taxes(this.axios)
-        this.orders = new Orders(this.axios)
-        this.tables = new Tables(this.axios)
+        this.companies = new Companies(this.http)
+        this.companiesOnCompanies = new CompaniesOnCompanies(this.http)
+        this.clients = new Clients(this.http)
+        this.signatures = new Signatures(this.http)
+        this.billing = new Billing(this.http)
+        this.invoices = new Invoices(this.http)
+        this.reports = new Reports(this.http)
+        this.emissionPoints = new EmissionPoints(this.http)
+        this.establishments = new Establishments(this.http)
+        this.people = new People(this.http)
+        this.batchBilling = new BatchBilling(this.http)
+        this.taxes = new Taxes(this.http)
+        this.orders = new Orders(this.http)
+        this.tables = new Tables(this.http)
+        this.categoryProducts = new CategoryProducts(this.http)
+        this.products = new Products(this.http)
     }
 }
 
@@ -106,6 +112,8 @@ export class LessaBillingClientSideSDK {
     public taxes: Taxes
     public orders: Orders
     public tables: Tables
+    public categoryProducts: CategoryProducts
+    public products: Products
 
     constructor(private readonly http: AxiosInstance) {
 
@@ -124,6 +132,9 @@ export class LessaBillingClientSideSDK {
         this.orders = new Orders(this.http)
         this.orders = new Orders(this.http)
         this.tables = new Tables(this.http)
+        this.categoryProducts = new CategoryProducts(this.http)
+        this.products = new Products(this.http)
+
     }
 }
 

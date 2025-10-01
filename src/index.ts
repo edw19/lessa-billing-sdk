@@ -19,6 +19,7 @@ export * from './utils/index'
 
 export { type Order, type Table, type OrderItem, type OrderList } from './resources/orders'
 
+export * from './domain'
 
 export {
     LessaBillingSDK,
