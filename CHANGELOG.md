@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.5.0...v0.6.0) (2025-10-01)
+
+
+### Features
+
+* **add products and categories:** products and categories added ([44455d0](https://github.com/edw19/lessa-billing-sdk/commit/44455d0484911cdb078a1588e39cda93c6261f6b))
+
 # [0.5.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.4.0...v0.5.0) (2025-09-29)
 
 
