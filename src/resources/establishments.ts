@@ -3,8 +3,8 @@ import { AxiosInstance } from 'axios'
 export class Establishments {
     constructor(private axios: AxiosInstance) { }
 
-    async getEstablishments(ruc: string): Promise<any[]> {
-        const resp = await this.axios.get(`establishments/company/${ruc}`)
+    async getEstablishments(rucID: string): Promise<any[]> {
+        const resp = await this.axios.get(`establishments/company/${rucID}`)
         return resp.data
     }
 

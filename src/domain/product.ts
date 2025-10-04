@@ -14,3 +14,16 @@ export interface Product {
     rucID: string;
     images: any[] | null;
 }
+
+
+export interface CreateProductOnCompany {
+    warehousesIDs: string[];
+    categoriesToAddIDs?: string[];
+    type: string
+    mainCode: string;
+    auxiliaryCode: string;
+    name: string;
+    description: string;
+    quantity: number;
+    taxes: string[];
+}

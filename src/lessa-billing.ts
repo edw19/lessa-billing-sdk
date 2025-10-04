@@ -16,6 +16,8 @@ import { Orders } from './resources/orders'
 import { Tables } from './resources/tables'
 import { CategoryProducts } from './resources/category-products'
 import { Products } from './resources/products'
+import { Inventory } from './resources/inventory'
+import { Warehouses } from './resources/warehouses'
 
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {})
 
@@ -59,6 +61,8 @@ export class LessaBillingSDK {
     public tables: Tables
     public categoryProducts: CategoryProducts
     public products: Products
+    public inventory: Inventory
+    public warehouses: Warehouses
 
     constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment }) {
 
@@ -93,6 +97,8 @@ export class LessaBillingSDK {
         this.tables = new Tables(this.http)
         this.categoryProducts = new CategoryProducts(this.http)
         this.products = new Products(this.http)
+        this.inventory = new Inventory(this.http)
+        this.warehouses = new Warehouses(this.http)
     }
 }
 
@@ -114,6 +120,8 @@ export class LessaBillingClientSideSDK {
     public tables: Tables
     public categoryProducts: CategoryProducts
     public products: Products
+    public inventory: Inventory
+    public warehouses: Warehouses
 
     constructor(private readonly http: AxiosInstance) {
 
@@ -134,6 +142,8 @@ export class LessaBillingClientSideSDK {
         this.tables = new Tables(this.http)
         this.categoryProducts = new CategoryProducts(this.http)
         this.products = new Products(this.http)
+        this.inventory = new Inventory(this.http)
+        this.warehouses = new Warehouses(this.http)
 
     }
 }

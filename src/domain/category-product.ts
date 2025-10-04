@@ -5,3 +5,6 @@ export interface CategoryProduct {
     color: string;
     totalProductsInCategory: number;
 }
+
+export interface CategoryProductCreate extends Pick<CategoryProduct, "name" | "description" | "color"> {}
+export interface CategoryProductUpdate extends Partial<Pick<CategoryProduct, "name" | "description" | "color">> {}
