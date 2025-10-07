@@ -1,4 +1,5 @@
 import { AxiosInstance } from 'axios'
+import { CreateOrderInput } from '../domain/orders';
 
 
 export type OrderList = Order[]
@@ -47,7 +48,7 @@ export class Orders {
         return resp.data
     }
 
-    async create(establishmentId: string, tableId: string, dto: any) {
+    async create(establishmentId: string, tableId: string, dto: CreateOrderInput) {
         const resp = await this.http.post(`orders/establishment/${establishmentId}/${tableId}`, dto)
         return resp.data
     }

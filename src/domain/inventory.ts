@@ -19,6 +19,12 @@ export interface InventoryFindResponse {
     pagination: Pagination;
 }
 
+interface ProductImage {
+  url: string;
+  public_id: string;
+  secure_url: string;
+}
+
 interface Pagination {
     hasNextPage: boolean;
     hasPreviousPage: boolean;
@@ -35,6 +41,13 @@ interface Item {
     product: Product;
     categories: Category[];
     purcharsePrice: number;
+
+    currentPurcharsePrice: {
+        id: string
+        price: number
+        inventoryUnitId: string
+        currentPurchasePriceId: string
+    }
     salePrices: SalePrice[];
     taxes: { id: string, name: string, value: string }[]
 }
@@ -52,6 +65,8 @@ interface Product {
     code: string;
     name: string;
     iva: Iva;
+
+    images: ProductImage[];
 }
 
 interface Iva {

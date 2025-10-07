@@ -11,4 +11,11 @@ export class Inventory {
 
         return resp.data
     }
+
+    // units 
+
+    async updateInventoryUnits(inventoryUnitId: string, dto: any) {
+        const resp = await this.http.patch(`inventories/units/${inventoryUnitId}`, dto)
+        return resp.data
+    }
 }

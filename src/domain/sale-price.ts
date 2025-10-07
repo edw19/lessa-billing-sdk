@@ -6,3 +6,7 @@ export interface SalePrice {
     minQuantity: number;
     isActive: boolean;
 }
+
+type SaleWithFields = Omit<SalePrice, 'id' | 'isActive'>;
+export type SalePriceCreateInput = Pick<SalePrice, 'price' | 'unitsForPrice'> & Partial<Pick<SalePrice, 'maxQuantity' | 'minQuantity'>>;
+export type SalePriceUpdateInput = Partial<SaleWithFields>;

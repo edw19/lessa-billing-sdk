@@ -1,19 +1,12 @@
 import { AxiosInstance } from 'axios'
+import { Table } from './orders'
 
-export interface Table {
-    id: string;
-    name: string;
-    status: number;
-    createdAt: string;
-    updatedAt: string;
-    establishmentId: string;
-}
 
 export class Tables {
     constructor(private readonly http: AxiosInstance) { }
 
     async byEstablishment(establishmentId: string) {
-        const resp = await this.http.get(`tables/establishment/${establishmentId}`)
+        const resp = await this.http.get<Table[]>(`tables/establishment/${establishmentId}`)
         return resp.data
     }
 
