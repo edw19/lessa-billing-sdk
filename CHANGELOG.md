@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.8.0...v0.9.0) (2025-10-09)
+
+
+### Features
+
+* add new types ([9a4731c](https://github.com/edw19/lessa-billing-sdk/commit/9a4731c7badb26952050fd1662f2e58ad937394a))
+
 # [0.8.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.7.0...v0.8.0) (2025-10-07)
 
 
