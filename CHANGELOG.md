@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.7.0...v0.8.0) (2025-10-07)
+
+
+### Features
+
+* **add new services for lba:** new services ([3f961d4](https://github.com/edw19/lessa-billing-sdk/commit/3f961d435bd495a1b38276641766ff3a79bea49e))
+
 # [0.7.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.6.0...v0.7.0) (2025-10-04)
 
 
