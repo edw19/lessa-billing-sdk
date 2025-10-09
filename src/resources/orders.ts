@@ -1,20 +1,10 @@
 import { AxiosInstance } from 'axios'
-import { CreateOrderInput } from '../domain/orders';
+import { CreateOrderInput, Order } from '../domain/orders';
 
 
 export type OrderList = Order[]
 
-export interface Order {
-    id: string;
-    status: string;
-    observation: string;
-    createdAt: string;
-    updatedAt: string;
-    tableId: string;
-    establishmentId: string;
-    items: OrderItem[];
-    table: Table;
-}
+
 
 export interface Table {
     id: string;
@@ -25,16 +15,6 @@ export interface Table {
     establishmentId: string;
 }
 
-export interface OrderItem {
-    id: string;
-    name: string;
-    qty: number;
-    observation: string;
-    price: number;
-    createdAt: string;
-    updatedAt: string;
-    orderId: string;
-}
 
 
 export class Orders {
