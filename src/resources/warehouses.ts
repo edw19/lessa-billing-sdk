@@ -16,4 +16,19 @@ export class Warehouses {
         })
         return resp.data
     }
+
+    async findByEstablishmentId(establishmentId: string) {
+        const resp = await this.http.get(`warehouses/establishment/${establishmentId}`)
+        return resp.data
+    }
+
+    async findWarehouses(rucID: string, establishmentCode: number) {
+        const resp = await this.http.get(`warehouses/find/${rucID}/${establishmentCode}`)
+        return resp.data
+    }
+
+    async findOne(warehouseId: string) {
+        const resp = await this.http.get(`warehouses/${warehouseId}`)
+        return resp.data
+    }
 }
