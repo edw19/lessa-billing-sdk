@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.9.0...v0.10.0) (2025-10-11)
+
+
+### Features
+
+* **change path service:** change path service ([f8da5f6](https://github.com/edw19/lessa-billing-sdk/commit/f8da5f6f11bc0259356132c765f12b596c309c2d))
+
 # [0.9.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.8.0...v0.9.0) (2025-10-09)
 
 
