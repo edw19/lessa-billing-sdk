@@ -5,13 +5,13 @@ import { Table } from './orders'
 export class Tables {
     constructor(private readonly http: AxiosInstance) { }
 
-    async byEstablishment(establishmentId: string) {
-        const resp = await this.http.get<Table[]>(`tables/establishment/${establishmentId}`)
+    async byEstablishment(rucID: string, establishmentCode: number) {
+        const resp = await this.http.get<Table[]>(`tables/${rucID}/${establishmentCode}`)
         return resp.data
     }
 
-    async create(establishmentId: string, dto: any) {
-        const resp = await this.http.post(`tables/establishment/${establishmentId}`, dto)
+    async create(rucID: string, establishmentCode: number, dto: any) {
+        const resp = await this.http.post(`tables/${rucID}/${establishmentCode}`, dto)
         return resp.data
     }
 }
