@@ -9,6 +9,7 @@ export type OrderList = Order[]
 export interface Table {
     id: string;
     name: string;
+    sequential: number
     status: number;
     createdAt: string;
     updatedAt: string;
@@ -21,15 +22,15 @@ export class Orders {
     constructor(private readonly http: AxiosInstance) { }
 
     // orders 
-    async byEstablishment(establishmentId: string, queryParams: any): Promise<Order[]> {
-        const resp = await this.http.get(`orders/establishment/${establishmentId}`, {
+    async byEstablishment(rucID: string, establishmentCode: number, queryParams: any): Promise<Order[]> {
+        const resp = await this.http.get(`orders/establishment/${rucID}/${establishmentCode}`, {
             params: queryParams
         })
         return resp.data
     }
 
-    async create(establishmentId: string, tableId: string, dto: CreateOrderInput) {
-        const resp = await this.http.post(`orders/establishment/${establishmentId}/${tableId}`, dto)
+    async create(rucID: string, establishmentCode: number, tableId: string, dto: CreateOrderInput) {
+        const resp = await this.http.post(`orders/establishment/${rucID}/${establishmentCode}/${tableId}`, dto)
         return resp.data
     }
 

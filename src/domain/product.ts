@@ -26,4 +26,5 @@ export interface CreateProductOnCompany {
     description: string;
     quantity: number;
     taxes: string[];
+    salePrice: number
 }
