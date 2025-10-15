@@ -12,6 +12,7 @@ export interface Order {
     establishmentId: string;
     items: OrderItem[];
     table: Table;
+    orderNumber: number
     client: Client | null;
 }
 
@@ -33,4 +34,9 @@ export interface OrderItem {
     createdAt: string;
     updatedAt: string;
     orderId: string;
+    productId: string
 }
+
+export type OrderItemSelected = Pick<OrderItem, 'id' | 'name' | 'qty' | 'observation' | 'price' | 'productId'>
+export type CreateOrderItemInput = Omit<OrderItemSelected, 'id'>
+export type UpdateOrderItemInput = Partial<Omit<OrderItemSelected, 'id'>>

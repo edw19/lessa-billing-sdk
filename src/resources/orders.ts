@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios'
-import { CreateOrderInput, Order } from '../domain/orders';
+import { CreateOrderInput, CreateOrderItemInput, Order, UpdateOrderItemInput } from '../domain/orders';
 
 
 export type OrderList = Order[]
@@ -46,12 +46,12 @@ export class Orders {
 
     // order items
 
-    async createOrderItem(orderId: string, dto: any) {
+    async createOrderItem(orderId: string, dto: CreateOrderItemInput) {
         const resp = await this.http.post(`orders/items/${orderId}`, dto)
         return resp.data
     }
 
-    async updateOrderItem(orderItemId: string, dto: any) {
+    async updateOrderItem(orderItemId: string, dto: UpdateOrderItemInput) {
         const resp = await this.http.patch(`orders/items/${orderItemId}`, dto)
         return resp.data
     }

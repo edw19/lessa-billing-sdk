@@ -1,4 +1,4 @@
-import { LessaBillingSDK, LessaBillingClientSideSDK, createLessaBrowserClientSDK } from './lessa-billing'
+export * from './lessa-billing'
 
 export * from './libs/consumers'
 export * from './libs/taxes'
@@ -16,15 +16,6 @@ export * from './libs/type-environment'
 export * from './libs/type-receipt'
 export * from './libs/calculate-totals-invoice'
 export * from './utils/index'
-
-export { type Table, type OrderList } from './resources/orders'
-
 export * from './domain'
 
-export {
-    LessaBillingSDK,
-    LessaBillingClientSideSDK,
-    createLessaBrowserClientSDK
-}
-
-export default LessaBillingSDK
+export { type Table, type OrderList } from './resources/orders'
