@@ -20,10 +20,18 @@ export interface CreateOrderInput {
     observation: string;
     type?: string;
 
-    payWith: number
+    payWith?: number
     orderItems: Omit<OrderItem, 'id' | 'orderId' | 'createdAt' | 'updatedAt'>[];
     clientIdentification: string
 }
+
+export type UpdateOrderInput = {
+    type?: string;
+    payWith?: number;
+    status?: string;
+    observation?: string;
+}
+
 
 export interface OrderItem {
     id: string;
