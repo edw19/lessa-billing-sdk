@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.12.0...v0.13.0) (2025-10-15)
+
+
+### Features
+
+* refactor ([523ceb4](https://github.com/edw19/lessa-billing-sdk/commit/523ceb40995b0b0b704f175373ba79b8b27f2206))
+
 # [0.12.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.11.0...v0.12.0) (2025-10-14)
 
 
