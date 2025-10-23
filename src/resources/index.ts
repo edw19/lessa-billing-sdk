@@ -17,3 +17,5 @@ export * from "./category-products";
 export * from "./establishments";
 export * from "./emission-points";
 export * from "./inventory"
+export * from "./purchases"
+export * from "./suppliers"

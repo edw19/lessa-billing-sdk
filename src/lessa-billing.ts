@@ -19,6 +19,8 @@ import {
     Inventory,
     Warehouses,
     Auth,
+    PurchasesResource,
+    SuppliersResource
 } from "./resources";
 
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {});
@@ -58,6 +60,8 @@ abstract class LessaBillingBaseSDK {
     public products: Products;
     public inventory: Inventory;
     public warehouses: Warehouses;
+    public purchases: PurchasesResource;
+    public suppliers: SuppliersResource;
 
     constructor(http: AxiosInstance) {
         this.http = http;
@@ -80,6 +84,8 @@ abstract class LessaBillingBaseSDK {
         this.products = new Products(http);
         this.inventory = new Inventory(http);
         this.warehouses = new Warehouses(http);
+        this.purchases = new PurchasesResource(http);
+        this.suppliers = new SuppliersResource(http);
     }
 }
 

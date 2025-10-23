@@ -17,5 +17,8 @@ export * from './libs/type-receipt'
 export * from './libs/calculate-totals-invoice'
 export * from './utils/index'
 export * from './domain'
+export * from './resources/purchases/purchases.domain'
+export * from './resources/suppliers/supliers.domain'
+
 
 export { type Table, type OrderList } from './resources/orders'
