@@ -1,3 +1,10 @@
+# [0.15.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.14.0...v0.15.0) (2025-11-05)
+
+
+### Features
+
+* add purchases resources ([90c4e58](https://github.com/edw19/lessa-billing-sdk/commit/90c4e5865293ea8883ca1cd2de9e400f07933865))
+
 # [0.14.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.13.0...v0.14.0) (2025-10-17)
 
 
