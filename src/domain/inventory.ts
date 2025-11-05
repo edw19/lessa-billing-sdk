@@ -25,7 +25,7 @@ interface ProductImage {
   secure_url: string;
 }
 
-interface Pagination {
+export interface Pagination {
     hasNextPage: boolean;
     hasPreviousPage: boolean;
     itemsPerPage: number;
