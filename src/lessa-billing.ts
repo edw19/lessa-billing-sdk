@@ -26,8 +26,8 @@ import {
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {});
 
 const environments = [
-    { environment: "Production", url: "https://lessa-billing-api-production.up.railway.app" },
-    { environment: "Test", url: "https://lessa-billing-api-preview.up.railway.app" },
+    { environment: "Production", url: "https://api-production.lessa.app" },
+    { environment: "Test", url: "https://api-test.lessa.app" },
     { environment: "Development", url: "http://localhost:5000" },
 ] as const;
 
@@ -100,7 +100,7 @@ export class LessaBillingSDK extends LessaBillingBaseSDK {
 
         const http = axios.create({
             baseURL: `${envConfig.url}/api`,
-            headers: { 
+            headers: {
                 "x-lessa-api-key": API_KEY,
                 ...config?.headers
             },
@@ -137,13 +137,13 @@ export async function createLessaBrowserClientSDK(
         // let accessToken = localStorage.getItem("lessa-access-token");
 
         // if (!accessToken) {
-            // const instance = axios.create({ baseURL: `${envConfig.url}/api` });
-            // const auth = new Auth(instance);
-            // const resp = await auth.loginGoogle(googleToken);
+        // const instance = axios.create({ baseURL: `${envConfig.url}/api` });
+        // const auth = new Auth(instance);
+        // const resp = await auth.loginGoogle(googleToken);
 
-            // localStorage.setItem("lessa-access-token", resp.accessToken);
-            // localStorage.setItem("lessa-refresh-token", resp.refreshToken);
-            // accessToken = resp.accessToken;
+        // localStorage.setItem("lessa-access-token", resp.accessToken);
+        // localStorage.setItem("lessa-refresh-token", resp.refreshToken);
+        // accessToken = resp.accessToken;
         // }
 
         const http = axios.create({
