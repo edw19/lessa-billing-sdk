@@ -1,3 +1,10 @@
+# [0.17.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.16.0...v0.17.0) (2025-11-08)
+
+
+### Features
+
+* change host ([722b0a4](https://github.com/edw19/lessa-billing-sdk/commit/722b0a4364b0fd7aa11a59a89a26b8d228ccf3d8))
+
 # [0.16.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.15.0...v0.16.0) (2025-11-08)
 
 
