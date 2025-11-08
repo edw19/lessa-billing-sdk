@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.15.0...v0.16.0) (2025-11-08)
+
+
+### Features
+
+* auth based on  cookies ([bca6329](https://github.com/edw19/lessa-billing-sdk/commit/bca632952d8be4874d470d5b7cf4db7e354fb4c0))
+
 # [0.15.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.14.0...v0.15.0) (2025-11-05)
 
 
