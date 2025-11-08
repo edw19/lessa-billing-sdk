@@ -94,13 +94,17 @@ abstract class LessaBillingBaseSDK {
 /* -------------------------------------------------------------------------- */
 
 export class LessaBillingSDK extends LessaBillingBaseSDK {
-    constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment }) {
+    constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment, headers?: any }) {
         const envConfig = getEnvironmentConfig(config?.environment);
         if (!envConfig) throw new Error(`Invalid environment: ${config?.environment}`);
 
         const http = axios.create({
             baseURL: `${envConfig.url}/api`,
-            headers: { "x-lessa-api-key": API_KEY },
+            headers: { 
+                "x-lessa-api-key": API_KEY,
+                ...config?.headers
+            },
+            withCredentials: true,
         });
 
         super(http);
@@ -130,44 +134,45 @@ export async function createLessaBrowserClientSDK(
     if (!envConfig) throw new Error(`Invalid environment: ${config?.environment}`);
 
     try {
-        let accessToken = localStorage.getItem("lessa-access-token");
+        // let accessToken = localStorage.getItem("lessa-access-token");
 
-        if (!accessToken) {
-            const instance = axios.create({ baseURL: `${envConfig.url}/api` });
-            const auth = new Auth(instance);
-            const resp = await auth.loginGoogle(googleToken);
+        // if (!accessToken) {
+            // const instance = axios.create({ baseURL: `${envConfig.url}/api` });
+            // const auth = new Auth(instance);
+            // const resp = await auth.loginGoogle(googleToken);
 
-            localStorage.setItem("lessa-access-token", resp.accessToken);
-            localStorage.setItem("lessa-refresh-token", resp.refreshToken);
-            accessToken = resp.accessToken;
-        }
+            // localStorage.setItem("lessa-access-token", resp.accessToken);
+            // localStorage.setItem("lessa-refresh-token", resp.refreshToken);
+            // accessToken = resp.accessToken;
+        // }
 
         const http = axios.create({
             baseURL: `${envConfig.url}/api`,
-            headers: { Authorization: `Bearer ${accessToken}` },
+            // headers: { Authorization: `Bearer ${accessToken}` },
+            withCredentials: true,
         });
 
         // Interceptor para refrescar tokens automáticamente
-        http.interceptors.response.use(
-            (res) => res,
-            async (err) => {
-                const original = err.config;
-                if (err.response?.status === 401 && !original._retry) {
-                    original._retry = true;
-                    try {
-                        const newAccessToken = await refreshAccessToken(envConfig.url);
-                        http.defaults.headers.Authorization = `Bearer ${newAccessToken}`;
-                        original.headers.Authorization = `Bearer ${newAccessToken}`;
-                        return http(original);
-                    } catch (refreshError) {
-                        localStorage.removeItem("lessa-access-token");
-                        localStorage.removeItem("lessa-refresh-token");
-                        return Promise.reject(refreshError);
-                    }
-                }
-                return Promise.reject(err);
-            }
-        );
+        // http.interceptors.response.use(
+        //     (res) => res,
+        //     async (err) => {
+        //         const original = err.config;
+        //         if (err.response?.status === 401 && !original._retry) {
+        //             original._retry = true;
+        //             try {
+        //                 const newAccessToken = await refreshAccessToken(envConfig.url);
+        //                 http.defaults.headers.Authorization = `Bearer ${newAccessToken}`;
+        //                 original.headers.Authorization = `Bearer ${newAccessToken}`;
+        //                 return http(original);
+        //             } catch (refreshError) {
+        //                 localStorage.removeItem("lessa-access-token");
+        //                 localStorage.removeItem("lessa-refresh-token");
+        //                 return Promise.reject(refreshError);
+        //             }
+        //         }
+        //         return Promise.reject(err);
+        //     }
+        // );
 
         return new LessaBillingClientSideSDK(http);
     } catch (error) {

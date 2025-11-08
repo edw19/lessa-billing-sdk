@@ -1,5 +1,6 @@
 import { AxiosInstance } from 'axios'
 import { CreateOrderInput, CreateOrderItemInput, Order, UpdateOrderInput, UpdateOrderItemInput } from '../domain/orders';
+import { PaginatedResponse } from './purchases';
 
 
 export type OrderList = Order[]
@@ -22,7 +23,7 @@ export class Orders {
     constructor(private readonly http: AxiosInstance) { }
 
     // orders 
-    async byEstablishment(rucID: string, establishmentCode: number, queryParams: any): Promise<Order[]> {
+    async byEstablishment(rucID: string, establishmentCode: number, queryParams: any): Promise<PaginatedResponse<Order>> {
         const resp = await this.http.get(`orders/establishment/${rucID}/${establishmentCode}`, {
             params: queryParams
         })
