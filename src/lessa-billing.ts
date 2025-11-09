@@ -22,6 +22,7 @@ import {
     PurchasesResource,
     SuppliersResource
 } from "./resources";
+import { Agent } from 'node:https'
 
 type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string & {});
 
@@ -96,8 +97,10 @@ abstract class LessaBillingBaseSDK {
 export class LessaBillingSDK extends LessaBillingBaseSDK {
     constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment, headers?: any }) {
         const envConfig = getEnvironmentConfig(config?.environment);
-        console.log({envConfig})
+        console.log({ envConfig })
         if (!envConfig) throw new Error(`Invalid environment: ${config?.environment}`);
+
+        const httpAgent = new Agent({ rejectUnauthorized: envConfig.environment === "Production" });
 
         const http = axios.create({
             baseURL: `${envConfig.url}/api`,
@@ -106,6 +109,7 @@ export class LessaBillingSDK extends LessaBillingBaseSDK {
                 ...config?.headers
             },
             withCredentials: true,
+            httpAgent
         });
 
         super(http);
