@@ -1,3 +1,10 @@
+# [0.22.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.21.0...v0.22.0) (2025-11-09)
+
+
+### Features
+
+* fix path ([48867a9](https://github.com/edw19/lessa-billing-sdk/commit/48867a983e6fd6d18d21e1cb919608fb1210877f))
+
 # [0.21.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.20.0...v0.21.0) (2025-11-09)
 
 
