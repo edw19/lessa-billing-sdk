@@ -27,7 +27,8 @@ type LessaBillingEnvironment = "Production" | "Test" | "Development" | (string &
 
 const environments = [
     { environment: "Production", url: "https://api-production.lessa.app" },
-    { environment: "Test", url: "https://api-test.lessa.app" },
+    // { environment: "Test", url: "https://api-test.lessa.app" },
+    { environment: "Test", url: "lessa-billing-api-preview.up.railway.app" },
     { environment: "Development", url: "http://localhost:5000" },
 ] as const;
 
