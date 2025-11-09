@@ -1,3 +1,10 @@
+# [0.18.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.17.0...v0.18.0) (2025-11-09)
+
+
+### Features
+
+* add log for test ([03fd53a](https://github.com/edw19/lessa-billing-sdk/commit/03fd53ab868537d6ea95bcc1f4a3d28d94b35f86))
+
 # [0.17.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.16.0...v0.17.0) (2025-11-08)
 
 
