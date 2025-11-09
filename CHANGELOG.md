@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.20.0...v0.21.0) (2025-11-09)
+
+
+### Features
+
+* change url ([0e5c3cd](https://github.com/edw19/lessa-billing-sdk/commit/0e5c3cd541a536b6525a81917fa4f6fa9fbe6268))
+
 # [0.20.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.19.0...v0.20.0) (2025-11-09)
 
 
