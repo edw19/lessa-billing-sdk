@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.18.0...v0.19.0) (2025-11-09)
+
+
+### Features
+
+* add agent ([189046a](https://github.com/edw19/lessa-billing-sdk/commit/189046a384349b8f80b71cfb95560ec74896cd46))
+
 # [0.18.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.17.0...v0.18.0) (2025-11-09)
 
 
