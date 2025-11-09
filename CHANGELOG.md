@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.19.0...v0.20.0) (2025-11-09)
+
+
+### Features
+
+* add agent for props ([6917d49](https://github.com/edw19/lessa-billing-sdk/commit/6917d49a5043ac7e9f4f4c5050a48f06a88d50a8))
+
 # [0.19.0](https://github.com/edw19/lessa-billing-sdk/compare/v0.18.0...v0.19.0) (2025-11-09)
 
 
