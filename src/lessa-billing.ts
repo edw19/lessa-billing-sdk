@@ -96,6 +96,7 @@ abstract class LessaBillingBaseSDK {
 export class LessaBillingSDK extends LessaBillingBaseSDK {
     constructor(API_KEY: string, config?: { environment?: LessaBillingEnvironment, headers?: any }) {
         const envConfig = getEnvironmentConfig(config?.environment);
+        console.log({envConfig})
         if (!envConfig) throw new Error(`Invalid environment: ${config?.environment}`);
 
         const http = axios.create({
